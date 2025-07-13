@@ -1,137 +1,128 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{42DEEA12-F73E-4D63-81E9-5359E98C8D53}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FairAI</RootNamespace>
-    <AssemblyName>FairAI</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild">
-      <Version>0.4.1</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="BepInEx.BaseLib">
-      <Version>5.4.21</Version>
-    </PackageReference>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\BepInEx\core\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="BepInEx.MonoMod.HookGenPatcher">
-      <HintPath>..\..\..\..\Thunderstore\Data\LethalCompany\profiles\FluffModTest\BepInEx\patchers\Evaisa-HookGenPatcher\BepInEx.MonoMod.HookGenPatcher\BepInEx.MonoMod.HookGenPatcher.dll</HintPath>
-    </Reference>
-    <Reference Include="LethalConfig">
-      <HintPath>..\..\..\..\Thunderstore\Data\LethalCompany\profiles\FluffModTest\BepInEx\plugins\AinaVT-LethalConfig\LethalConfig\LethalConfig.dll</HintPath>
-    </Reference>
-    <Reference Include="LethalLib">
-      <HintPath>..\..\..\..\Thunderstore\Data\LethalCompany\profiles\FluffModTest\BepInEx\plugins\Evaisa-LethalLib\LethalLib\LethalLib.dll</HintPath>
-    </Reference>
-    <Reference Include="LethalThings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Thunderstore\Data\LethalCompany\profiles\FluffModTest\BepInEx\plugins\Evaisa-LethalThings\LethalThings\LethalThings.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoMod">
-      <HintPath>..\..\..\..\Thunderstore\Data\LethalCompany\profiles\FluffModTest\BepInEx\patchers\Evaisa-HookGenPatcher\BepInEx.MonoMod.HookGenPatcher\MonoMod.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoMod.RuntimeDetour.HookGen">
-      <HintPath>..\..\..\..\Thunderstore\Data\LethalCompany\profiles\FluffModTest\BepInEx\patchers\Evaisa-HookGenPatcher\BepInEx.MonoMod.HookGenPatcher\MonoMod.RuntimeDetour.HookGen.dll</HintPath>
-    </Reference>
-    <Reference Include="SolidLib">
-      <HintPath>..\..\..\..\Thunderstore\Data\LethalCompany\profiles\FluffModTest\BepInEx\plugins\SolidStone-SolidLib\SolidLib.dll</HintPath>
-    </Reference>
-    <Reference Include="Surfaced">
-      <HintPath>..\..\..\..\Thunderstore\Data\LethalCompany\profiles\FluffModTest\BepInEx\plugins\SurfacedTeam-Surfaced\Surfaced.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="TheNameIsTyler.TurretSettings">
-      <HintPath>..\..\..\..\Thunderstore\Data\LethalCompany\profiles\FluffModTest\BepInEx\plugins\TheNameIsTyler-TurretSettings\TheNameIsTyler.TurretSettings.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Netcode.Components, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Unity.Netcode.Components.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Netcode.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Unity.Netcode.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Networking.Transport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Unity.Networking.Transport.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.AIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="BoombaTimer.cs" />
-    <Compile Include="FAIR_AI.cs" />
-    <Compile Include="Patches\BoombaPatch.cs" />
-    <Compile Include="Patches\EnemyAIPatch.cs" />
-    <Compile Include="Patches\MineAIPatch.cs" />
-    <Compile Include="Patches\QuickSandPatch.cs" />
-    <Compile Include="Patches\RoundManagerPatch.cs" />
-    <Compile Include="Patches\StartOfRoundPatch.cs" />
-    <Compile Include="Patches\SurfaceMinePatch.cs" />
-    <Compile Include="Patches\TurretAIPatch.cs" />
-    <Compile Include="Plugin.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  	<!-- BepInEx Properties -->
+    <PropertyGroup>
+      <AssemblyName>GoldenKitten.FairAI</AssemblyName>
+      <Product>FairAI</Product>
+      <!-- Change to whatever version you're currently on. -->
+      <Version>1.5.1</Version>
+    </PropertyGroup>
+
+    <!-- Project Properties -->
+    <PropertyGroup>
+      <TargetFramework>netstandard2.1</TargetFramework>
+      <RootNamespace>FairAI</RootNamespace>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <!-- Enable Nullable for better IDE null-checking -->
+    <PropertyGroup>
+      <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <!-- Embed Debug Symbols for Easier Debugging -->
+    <PropertyGroup>
+      <DebugSymbols>true</DebugSymbols>
+      <DebugType>embedded</DebugType>
+      <!--
+          Trim the project path to prevent players from potentially
+          viewing Private Information in stack traces.
+          -->
+      <PathMap>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))=./</PathMap>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild">
+        <Version>0.4.3</Version>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="BepInEx.BaseLib">
+        <Version>5.4.21</Version>
+      </PackageReference>
+      <Reference Include="0Harmony">
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\BepInEx\core\0Harmony.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="BepInEx.MonoMod.HookGenPatcher">
+        <HintPath>Dependencies\BepInEx.MonoMod.HookGenPatcher.dll</HintPath>
+      </Reference>
+      <Reference Include="LethalConfig">
+        <HintPath>Dependencies\LethalConfig.dll</HintPath>
+      </Reference>
+      <Reference Include="LethalLib">
+        <HintPath>Dependencies\LethalLib.dll</HintPath>
+      </Reference>
+      <Reference Include="LethalThings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>Dependencies\LethalThings.dll</HintPath>
+      </Reference>
+      <Reference Include="MonoMod">
+        <HintPath>Dependencies\MonoMod.dll</HintPath>
+      </Reference>
+      <Reference Include="MonoMod.RuntimeDetour.HookGen">
+        <HintPath>Dependencies\MonoMod.RuntimeDetour.HookGen.dll</HintPath>
+      </Reference>
+      <Reference Include="SolidLib">
+        <HintPath>Dependencies\SolidLib.dll</HintPath>
+      </Reference>
+      <Reference Include="Surfaced">
+        <HintPath>Dependencies\Surfaced.dll</HintPath>
+      </Reference>
+      <Reference Include="System" />
+      <Reference Include="System.Core" />
+      <Reference Include="Microsoft.CSharp" />
+      <Reference Include="System.Net.Http" />
+      <Reference Include="TheNameIsTyler.TurretSettings">
+        <HintPath>Dependencies\TheNameIsTyler.TurretSettings.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Netcode.Components, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Unity.Netcode.Components.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Netcode.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Unity.Netcode.Runtime.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Networking.Transport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Unity.Networking.Transport.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+        <SpecificVersion>False</SpecificVersion>
+        <HintPath>..\..\..\..\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Properties\" />
+    </ItemGroup>
 </Project>
