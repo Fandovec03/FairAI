@@ -5,6 +5,7 @@ using FairAI.Patches;
 using GameNetcodeStuff;
 using HarmonyLib;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -39,6 +40,8 @@ namespace FairAI
         public static List<float> turretSettings;
 
         public static Dictionary<string, float[]> speeds;
+
+        public static Dictionary<int, float> sinkingProgress;
 
         public static Dictionary<int, Vector3> positions;
 
@@ -77,6 +80,7 @@ namespace FairAI
             itemList = new List<Item>();
             enemyList = new List<EnemyType>();
             speeds = new Dictionary<string, float[]>();
+            sinkingProgress = new Dictionary<int, float>();
             positions = new Dictionary<int, Vector3>();
             turretSettings = new List<float>();
             sinkingValues = new Dictionary<int, float>();
